@@ -242,6 +242,7 @@ class convertModisGDAL:
         datatype = band.DataType
         try:
             l_name = slugify(l.split(':')[-1])
+            l_name = l_name.replace('"', '')
             out_name = "{pref}_{lay}.tif".format(pref=self.output_pref,
                                                  lay=l_name)
         except:
